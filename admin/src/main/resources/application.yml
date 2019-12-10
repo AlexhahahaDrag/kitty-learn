@@ -5,4 +5,4 @@ server:
     min-spare-threads: 30
   port: 30041
   servlet:
-    context-path: /alex-hahaha
+    context-path: /admin

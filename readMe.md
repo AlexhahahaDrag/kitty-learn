@@ -8,4 +8,4 @@ For further reference, please consider the following sections:
 
 learning project from kitty;
 function:
-1.
+1.搭建环境
