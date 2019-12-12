@@ -12,6 +12,7 @@
     <artifactId>kitty-learn</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kitty-learn</name>
+    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,8 +20,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
-
-    <packaging>pom</packaging>
 
     <modules>
         <module>alex-common</module>
