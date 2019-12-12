@@ -46,8 +46,7 @@ public interface SysUserMapper {
 
     /**
      *@description 基础分页查询
-     *@param pageRequest
      *@return
     */
-    List<SysUser> findPage(PageRequest pageRequest);
+    List<SysUser> findPage();
 }

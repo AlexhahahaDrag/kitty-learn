@@ -1,5 +1,7 @@
 package com.alex.alexadmin.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  *-------------------------------
  * 用户管理 (SysUser)
@@ -30,10 +32,13 @@ public class SysUser {
     /** 创建人 */
     private String createBy;
     /** 创建时间 */
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private java.util.Date createTime;
     /** 更新人 */
     private String lastUpdateBy;
     /** 更新时间 */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private java.util.Date lastUpdateTime;
     /** 是否删除  -1：已删除  0：正常 */
     private Integer delFlag;

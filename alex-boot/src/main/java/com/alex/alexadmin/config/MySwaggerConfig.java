@@ -29,9 +29,7 @@ public class MySwaggerConfig {
                 .apis(RequestHandlerSelectors.any())
                 //可以根据url路径设置那些请求加入文档
                 .paths(PathSelectors.any())
-                .build()
-                //设置前缀
-                .pathMapping("/alex");
+                .build();
     }
 
     private ApiInfo apiInfo() {

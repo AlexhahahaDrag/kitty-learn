@@ -30,9 +30,9 @@ public class MybatisPageHelper {
     }
 
     /**
-     * @Description: 调用分页插件进行分页查询
-     * @Author:      alex
-     * @CreateDate:  2019/12/10 20:38
+     * Description: 调用分页插件进行分页查询
+     * Author:      alex
+     * CreateDate:  2019/12/10 20:38
      * @param pageRequest 分页请求
      * @param pageRequest queryMethodName
      * @param mapper dao对象 mybatis的mapper
