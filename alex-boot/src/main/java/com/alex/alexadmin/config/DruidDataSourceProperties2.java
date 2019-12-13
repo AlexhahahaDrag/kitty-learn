@@ -3,25 +3,26 @@ package com.alex.alexadmin.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @Description: druid datasource properties
- * @Author:     alex
- * @CreateDate: 2019/12/12 16:36
- * @Version:    1.0
- *
-*/
-@ConfigurationProperties(prefix = "spring.datasource.druid")
-public class DruidDataSourceProperties {
+ * Description: druid datasource properties
+ * Author:     alex
+ * CreateDate: 2019/12/12 16:36
+ * Version:    1.0
+ **/
 
-    //jdbc
+
+@ConfigurationProperties(prefix = "spring.datasource.slave.druid")
+public class DruidDataSourceProperties2 {
+
+ //jdbc
     private String driverClassName;
-    private String url;
+    private String jdbcUrl;
     private String username;
     private String password;
 
     //jdbc connection pool
     private int initialSize;
     private int minIdle;
-    private int maxActive;
+    private int maxActive = 10;
     private long maxWait;
     private long timeBetweenEvictionRunsMillis;
     private long minEvictableIdleTimeMillis;
@@ -42,12 +43,12 @@ public class DruidDataSourceProperties {
         this.driverClassName = driverClassName;
     }
 
-    public String getUrl() {
-        return url;
+    public String getJdbcUrl() {
+        return jdbcUrl;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setJdbcUrl(String jdbcUrl) {
+        this.jdbcUrl = jdbcUrl;
     }
 
     public String getUsername() {
@@ -169,4 +170,5 @@ public class DruidDataSourceProperties {
     public void setFilters(String filters) {
         this.filters = filters;
     }
+
 }

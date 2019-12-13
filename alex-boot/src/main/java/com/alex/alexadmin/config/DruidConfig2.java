@@ -24,14 +24,14 @@ import javax.sql.DataSource;
  *
 */
 @Configuration
-@EnableConfigurationProperties({DruidDataSourceProperties1.class})
-public class DruidConfig {
+@EnableConfigurationProperties({DruidDataSourceProperties2.class})
+public class DruidConfig2 {
 
     @Autowired
-    private DruidDataSourceProperties1 properties;
+    private DruidDataSourceProperties2 properties;
 
     @Bean
-    public DataSource druidDataSource2() {
+    public DataSource druidDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setDriverClassName(properties.getDriverClassName());
         druidDataSource.setUrl(properties.getJdbcUrl());
@@ -65,7 +65,7 @@ public class DruidConfig {
     */
     @Bean
     @ConditionalOnMissingBean
-    public ServletRegistrationBean<Servlet> druidServlet2() {
+    public ServletRegistrationBean<Servlet> druidServlet() {
         ServletRegistrationBean<Servlet> servletServletRegistrationBean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
 
         //白名单
@@ -87,7 +87,7 @@ public class DruidConfig {
     */
     @Bean
     @ConditionalOnMissingBean
-    public FilterRegistrationBean<Filter> filterRegistrationBean2() {
+    public FilterRegistrationBean<Filter> filterRegistrationBean() {
         FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");

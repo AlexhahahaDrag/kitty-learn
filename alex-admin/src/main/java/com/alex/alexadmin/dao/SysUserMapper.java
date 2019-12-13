@@ -3,7 +3,6 @@ package com.alex.alexadmin.dao;
 import java.util.List;
 
 import com.alex.alexadmin.model.SysUser;
-import com.alex.alexcore.page.PageRequest;
 
 /**
  *-------------------------------

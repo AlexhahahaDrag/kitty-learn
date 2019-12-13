@@ -10,3 +10,10 @@ server:
 spring:
   profiles:
     active: dev
+
+logging:
+  level:
+    com:
+      alex:
+        alexadmin:
+          dao: debug

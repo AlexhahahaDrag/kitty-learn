@@ -2,6 +2,7 @@ package com.alex.alexadmin.controller;
 
 import java.util.List;
 
+import com.alex.alexadmin.config.dds.DataSource;
 import com.alex.alexcore.http.HttpResult;
 import com.alex.alexcore.page.PageRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,8 +67,20 @@ public class SysUserController {
      *@param pageRequest
      *@return
     */
-    @PostMapping(value = "/findPage")
-    public HttpResult findPage(@RequestBody PageRequest pageRequest) {
+    @DataSource("master")
+    @PostMapping(value = "/findPage1")
+    public HttpResult findPage1(@RequestBody PageRequest pageRequest) {
+        return HttpResult.ok(sysUserService.findPage(pageRequest));
+    }
+
+    /**
+     *@description 基础分页查询
+     *@param pageRequest
+     *@return
+     */
+    @DataSource("slave")
+    @PostMapping(value = "/findPage2")
+    public HttpResult findPage2(@RequestBody PageRequest pageRequest) {
         return HttpResult.ok(sysUserService.findPage(pageRequest));
     }
 }
