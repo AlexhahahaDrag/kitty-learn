@@ -9,13 +9,13 @@ import com.alex.alexcore.page.MybatisPageHelper;
 import com.alex.alexcore.page.PageRequest;
 import com.alex.alexcore.page.PageResult;
 
-import com.alex.alexadmin.model.SysUser;
-import com.alex.alexadmin.dao.SysUserMapper;
-import com.alex.alexadmin.service.SysUserService;
+import com.alex.alexadmin.model.SysRole;
+import com.alex.alexadmin.dao.SysRoleMapper;
+import com.alex.alexadmin.service.SysRoleService;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserServiceImpl)
+ * 角色管理 (SysRoleServiceImpl)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:01:20
@@ -23,37 +23,37 @@ import com.alex.alexadmin.service.SysUserService;
  * version: 1.0.0
  */
  @Service
-public class SysUserServiceImpl implements SysUserService {
+public class SysRoleServiceImpl implements SysRoleService {
 
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private SysRoleMapper sysRoleMapper;
 
     @Override
-    public int save(SysUser record) {
+    public int save(SysRole record) {
         if (record.getId() == null || record.getId() == 0)
-            return sysUserMapper.add(record);
-        return sysUserMapper.update(record);
+            return sysRoleMapper.add(record);
+        return sysRoleMapper.update(record);
     }
 
     @Override
-    public int delete(SysUser record) {
-        return sysUserMapper.delete(record.getId());
+    public int delete(SysRole record) {
+        return sysRoleMapper.delete(record.getId());
     }
 
     @Override
-    public int delete(List<SysUser> records) {
-        for(SysUser sysUser : records)
-            delete(sysUser);
+    public int delete(List<SysRole> records) {
+        for(SysRole sysRole : records)
+            delete(sysRole);
         return 1;
     }
 
     @Override
-    public SysUser findById(Long id) {
-        return sysUserMapper.findById(id);
+    public SysRole findById(Long id) {
+        return sysRoleMapper.findById(id);
     }
 
     @Override
     public PageResult findPage(PageRequest pageRequest) {
-        return MybatisPageHelper.findPage(pageRequest, sysUserMapper);
+        return MybatisPageHelper.findPage(pageRequest, sysRoleMapper);
     }
 }

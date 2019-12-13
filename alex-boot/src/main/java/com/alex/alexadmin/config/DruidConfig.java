@@ -91,8 +91,8 @@ public class DruidConfig {
         FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");
-        //忽略资源
-        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gig,*.png,*.css,*.ico,/druid/*");
+        //添加不需要忽略资源
+        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gig,*.png,*.ico,*.css,/druid/*");
         return filterRegistrationBean;
     }
 }

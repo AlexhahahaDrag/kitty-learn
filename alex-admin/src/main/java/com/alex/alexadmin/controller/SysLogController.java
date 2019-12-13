@@ -15,48 +15,48 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alex.alexcore.http.HttpResult;
 import com.alex.alexcore.page.PageRequest;
 
-import com.alex.alexadmin.model.SysUser;
-import com.alex.alexadmin.service.SysUserService;
+import com.alex.alexadmin.model.SysLog;
+import com.alex.alexadmin.service.SysLogService;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserController)
+ * 系统日志 (SysLogController)
  *------------------------
  * author: alex
- * createDate: 2019-12-13 16:01:20
+ * createDate: 2019-12-13 16:01:19
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
- @Api(value ="SysUserController", tags={"用户管理"})
+ @Api(value ="SysLogController", tags={"系统日志"})
  @RestController
- @RequestMapping("/sysUser")
-public class SysUserController {
+ @RequestMapping("/sysLog")
+public class SysLogController {
 
     @Autowired
-    private SysUserService sysUserService;
+    private SysLogService sysLogService;
 
     /**
-     * @description 保存/修改用户管理
+     * @description 保存/修改系统日志
      * @param record
      * @return
     */
-    @ApiOperation(value = "保存用户管理")
+    @ApiOperation(value = "保存系统日志")
     @PostMapping(value = "/save")
-    @RequiresPermissions("sys:sysUser:save")
-    public HttpResult save(@RequestBody SysUser record) {
-        return HttpResult.ok(sysUserService.save(record));
+    @RequiresPermissions("sys:sysLog:save")
+    public HttpResult save(@RequestBody SysLog record) {
+        return HttpResult.ok(sysLogService.save(record));
     }
 
     /**
-     * @description 删除用户管理
+     * @description 删除系统日志
      * @param records
      * @return
     */
-    @ApiOperation(value = "删除用户管理")
+    @ApiOperation(value = "删除系统日志")
     @PostMapping(value = "/delete")
-    @RequiresPermissions("sys:sysUser:delete")
-    public HttpResult delete(@RequestBody List<SysUser> records) {
-        return HttpResult.ok(sysUserService.delete(records));
+    @RequiresPermissions("sys:sysLog:delete")
+    public HttpResult delete(@RequestBody List<SysLog> records) {
+        return HttpResult.ok(sysLogService.delete(records));
     }
 
     /**
@@ -64,11 +64,11 @@ public class SysUserController {
      *@param id
      *@return
     */
-    @ApiOperation(value = "通过id查询用户管理")
+    @ApiOperation(value = "通过id查询系统日志")
     @GetMapping(value = "/findById")
-    @RequiresPermissions("sys:sysUser:view")
+    @RequiresPermissions("sys:sysLog:view")
     public HttpResult findById(@RequestParam("id") Long id) {
-        return HttpResult.ok(sysUserService.findById(id));
+        return HttpResult.ok(sysLogService.findById(id));
     }
 
     /**
@@ -76,10 +76,10 @@ public class SysUserController {
      *@param pageRequest
      *@return
     */
-    @ApiOperation(value = "分页查询用户管理")
+    @ApiOperation(value = "分页查询系统日志")
     @PostMapping(value = "/findPage")
-    @RequiresPermissions("sys:sysUser:view")
+    @RequiresPermissions("sys:sysLog:view")
     public HttpResult findPage(@RequestBody PageRequest pageRequest) {
-        return HttpResult.ok(sysUserService.findPage(pageRequest));
+        return HttpResult.ok(sysLogService.findPage(pageRequest));
     }
 }

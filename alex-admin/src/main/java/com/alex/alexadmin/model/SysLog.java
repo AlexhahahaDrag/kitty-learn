@@ -5,39 +5,36 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 /**
  *-------------------------------
- * 用户管理 (SysUser)
+ * 系统日志 (SysLog)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:17:08
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
-@ApiModel(value="SysUser对象", description="用户管理")
-public class SysUser {
+@ApiModel(value="SysLog对象", description="系统日志")
+public class SysLog {
 
     @ApiModelProperty(value = "编号")
     private Long id;
 
     @ApiModelProperty(value = "用户名")
-    private String name;
+    private String userName;
 
-    @ApiModelProperty(value = "密码")
-    private String password;
+    @ApiModelProperty(value = "用户操作")
+    private String operation;
 
-    @ApiModelProperty(value = "盐")
-    private String salt;
+    @ApiModelProperty(value = "请求方法")
+    private String method;
 
-    @ApiModelProperty(value = "邮箱")
-    private String email;
+    @ApiModelProperty(value = "请求参数")
+    private String params;
 
-    @ApiModelProperty(value = "手机号")
-    private String mobile;
+    @ApiModelProperty(value = "执行时长(毫秒)")
+    private Long time;
 
-    @ApiModelProperty(value = "状态  0：禁用   1：正常")
-    private Integer status;
-
-    @ApiModelProperty(value = "机构ID")
-    private Long deptId;
+    @ApiModelProperty(value = "IP地址")
+    private String ip;
 
     @ApiModelProperty(value = "创建人")
     private String createBy;
@@ -51,9 +48,6 @@ public class SysUser {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GTM+8")
     @ApiModelProperty(value = "更新时间")
     private java.util.Date lastUpdateTime;
-    @ApiModelProperty(value = "是否删除  -1：已删除  0：正常")
-    private Integer delFlag;
-
 
     public Long getId() {
         return id;
@@ -62,54 +56,47 @@ public class SysUser {
     public void setId (Long id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName (String name) {
-        this.name = name;
+    public void setUserName (String userName) {
+        this.userName = userName;
     }
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword (String password) {
-        this.password = password;
-    }
-    public String getSalt() {
-        return salt;
+    public String getOperation() {
+        return operation;
     }
 
-    public void setSalt (String salt) {
-        this.salt = salt;
+    public void setOperation (String operation) {
+        this.operation = operation;
     }
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail (String email) {
-        this.email = email;
-    }
-    public String getMobile() {
-        return mobile;
+    public String getMethod() {
+        return method;
     }
 
-    public void setMobile (String mobile) {
-        this.mobile = mobile;
+    public void setMethod (String method) {
+        this.method = method;
     }
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus (Integer status) {
-        this.status = status;
-    }
-    public Long getDeptId() {
-        return deptId;
+    public String getParams() {
+        return params;
     }
 
-    public void setDeptId (Long deptId) {
-        this.deptId = deptId;
+    public void setParams (String params) {
+        this.params = params;
+    }
+    public Long getTime() {
+        return time;
+    }
+
+    public void setTime (Long time) {
+        this.time = time;
+    }
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp (String ip) {
+        this.ip = ip;
     }
     public String getCreateBy() {
         return createBy;
@@ -138,12 +125,5 @@ public class SysUser {
 
     public void setLastUpdateTime (java.util.Date lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
-    }
-    public Integer getDelFlag() {
-        return delFlag;
-    }
-
-    public void setDelFlag (Integer delFlag) {
-        this.delFlag = delFlag;
     }
 }

@@ -2,50 +2,50 @@ package com.alex.alexadmin.dao;
 
 import java.util.List;
 
-import com.alex.alexadmin.model.SysUser;
+import com.alex.alexadmin.model.SysMenu;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserMapper)
+ * 菜单管理 (SysMenuMapper)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:01:20
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
-public interface SysUserMapper {
+public interface SysMenuMapper {
 
     /**
-     * @description 添加用户管理
+     * @description 添加菜单管理
      * @param record
      * @return
     */
-    int add(SysUser record);
+    int add(SysMenu record);
 
     /**
-     * @description 删除用户管理
+     * @description 删除菜单管理
      * @param id
      * @return
     */
     int delete(Long id);
 
     /**
-     * @description 修改用户管理
+     * @description 修改菜单管理
      * @param record
      * @return
     */
-    int update(SysUser record);
+    int update(SysMenu record);
 
     /**
      *@description 根据主键查询
      *@param id
      *@return
     */
-    SysUser findById(Long id);
+    SysMenu findById(Long id);
 
     /**
      *@description 基础分页查询
      *@return
     */
-    List<SysUser> findPage();
+    List<SysMenu> findPage();
 }

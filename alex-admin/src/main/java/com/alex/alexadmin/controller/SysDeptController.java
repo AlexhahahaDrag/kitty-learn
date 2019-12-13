@@ -15,48 +15,48 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alex.alexcore.http.HttpResult;
 import com.alex.alexcore.page.PageRequest;
 
-import com.alex.alexadmin.model.SysUser;
-import com.alex.alexadmin.service.SysUserService;
+import com.alex.alexadmin.model.SysDept;
+import com.alex.alexadmin.service.SysDeptService;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserController)
+ * 机构管理 (SysDeptController)
  *------------------------
  * author: alex
- * createDate: 2019-12-13 16:01:20
+ * createDate: 2019-12-13 16:01:19
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
- @Api(value ="SysUserController", tags={"用户管理"})
+ @Api(value ="SysDeptController", tags={"机构管理"})
  @RestController
- @RequestMapping("/sysUser")
-public class SysUserController {
+ @RequestMapping("/sysDept")
+public class SysDeptController {
 
     @Autowired
-    private SysUserService sysUserService;
+    private SysDeptService sysDeptService;
 
     /**
-     * @description 保存/修改用户管理
+     * @description 保存/修改机构管理
      * @param record
      * @return
     */
-    @ApiOperation(value = "保存用户管理")
+    @ApiOperation(value = "保存机构管理")
     @PostMapping(value = "/save")
-    @RequiresPermissions("sys:sysUser:save")
-    public HttpResult save(@RequestBody SysUser record) {
-        return HttpResult.ok(sysUserService.save(record));
+    @RequiresPermissions("sys:sysDept:save")
+    public HttpResult save(@RequestBody SysDept record) {
+        return HttpResult.ok(sysDeptService.save(record));
     }
 
     /**
-     * @description 删除用户管理
+     * @description 删除机构管理
      * @param records
      * @return
     */
-    @ApiOperation(value = "删除用户管理")
+    @ApiOperation(value = "删除机构管理")
     @PostMapping(value = "/delete")
-    @RequiresPermissions("sys:sysUser:delete")
-    public HttpResult delete(@RequestBody List<SysUser> records) {
-        return HttpResult.ok(sysUserService.delete(records));
+    @RequiresPermissions("sys:sysDept:delete")
+    public HttpResult delete(@RequestBody List<SysDept> records) {
+        return HttpResult.ok(sysDeptService.delete(records));
     }
 
     /**
@@ -64,11 +64,11 @@ public class SysUserController {
      *@param id
      *@return
     */
-    @ApiOperation(value = "通过id查询用户管理")
+    @ApiOperation(value = "通过id查询机构管理")
     @GetMapping(value = "/findById")
-    @RequiresPermissions("sys:sysUser:view")
+    @RequiresPermissions("sys:sysDept:view")
     public HttpResult findById(@RequestParam("id") Long id) {
-        return HttpResult.ok(sysUserService.findById(id));
+        return HttpResult.ok(sysDeptService.findById(id));
     }
 
     /**
@@ -76,10 +76,10 @@ public class SysUserController {
      *@param pageRequest
      *@return
     */
-    @ApiOperation(value = "分页查询用户管理")
+    @ApiOperation(value = "分页查询机构管理")
     @PostMapping(value = "/findPage")
-    @RequiresPermissions("sys:sysUser:view")
+    @RequiresPermissions("sys:sysDept:view")
     public HttpResult findPage(@RequestBody PageRequest pageRequest) {
-        return HttpResult.ok(sysUserService.findPage(pageRequest));
+        return HttpResult.ok(sysDeptService.findPage(pageRequest));
     }
 }

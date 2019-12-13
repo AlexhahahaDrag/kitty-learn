@@ -5,39 +5,27 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 /**
  *-------------------------------
- * 用户管理 (SysUser)
+ * 机构管理 (SysDept)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:17:08
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
-@ApiModel(value="SysUser对象", description="用户管理")
-public class SysUser {
+@ApiModel(value="SysDept对象", description="机构管理")
+public class SysDept {
 
     @ApiModelProperty(value = "编号")
     private Long id;
 
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "机构名称")
     private String name;
 
-    @ApiModelProperty(value = "密码")
-    private String password;
+    @ApiModelProperty(value = "上级机构ID，一级机构为0")
+    private Long parentId;
 
-    @ApiModelProperty(value = "盐")
-    private String salt;
-
-    @ApiModelProperty(value = "邮箱")
-    private String email;
-
-    @ApiModelProperty(value = "手机号")
-    private String mobile;
-
-    @ApiModelProperty(value = "状态  0：禁用   1：正常")
-    private Integer status;
-
-    @ApiModelProperty(value = "机构ID")
-    private Long deptId;
+    @ApiModelProperty(value = "排序")
+    private Integer orderNum;
 
     @ApiModelProperty(value = "创建人")
     private String createBy;
@@ -69,47 +57,19 @@ public class SysUser {
     public void setName (String name) {
         this.name = name;
     }
-    public String getPassword() {
-        return password;
+    public Long getParentId() {
+        return parentId;
     }
 
-    public void setPassword (String password) {
-        this.password = password;
+    public void setParentId (Long parentId) {
+        this.parentId = parentId;
     }
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt (String salt) {
-        this.salt = salt;
-    }
-    public String getEmail() {
-        return email;
+    public Integer getOrderNum() {
+        return orderNum;
     }
 
-    public void setEmail (String email) {
-        this.email = email;
-    }
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile (String mobile) {
-        this.mobile = mobile;
-    }
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus (Integer status) {
-        this.status = status;
-    }
-    public Long getDeptId() {
-        return deptId;
-    }
-
-    public void setDeptId (Long deptId) {
-        this.deptId = deptId;
+    public void setOrderNum (Integer orderNum) {
+        this.orderNum = orderNum;
     }
     public String getCreateBy() {
         return createBy;

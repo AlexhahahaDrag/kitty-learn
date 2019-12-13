@@ -5,39 +5,33 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 /**
  *-------------------------------
- * 用户管理 (SysUser)
+ * 字典表 (SysDict)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:17:08
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
-@ApiModel(value="SysUser对象", description="用户管理")
-public class SysUser {
+@ApiModel(value="SysDict对象", description="字典表")
+public class SysDict {
 
     @ApiModelProperty(value = "编号")
     private Long id;
 
-    @ApiModelProperty(value = "用户名")
-    private String name;
+    @ApiModelProperty(value = "数据值")
+    private String value;
 
-    @ApiModelProperty(value = "密码")
-    private String password;
+    @ApiModelProperty(value = "标签名")
+    private String label;
 
-    @ApiModelProperty(value = "盐")
-    private String salt;
+    @ApiModelProperty(value = "类型")
+    private String type;
 
-    @ApiModelProperty(value = "邮箱")
-    private String email;
+    @ApiModelProperty(value = "描述")
+    private String description;
 
-    @ApiModelProperty(value = "手机号")
-    private String mobile;
-
-    @ApiModelProperty(value = "状态  0：禁用   1：正常")
-    private Integer status;
-
-    @ApiModelProperty(value = "机构ID")
-    private Long deptId;
+    @ApiModelProperty(value = "排序（升序）")
+    private Double sort;
 
     @ApiModelProperty(value = "创建人")
     private String createBy;
@@ -51,6 +45,9 @@ public class SysUser {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GTM+8")
     @ApiModelProperty(value = "更新时间")
     private java.util.Date lastUpdateTime;
+    @ApiModelProperty(value = "备注信息")
+    private String remarks;
+
     @ApiModelProperty(value = "是否删除  -1：已删除  0：正常")
     private Integer delFlag;
 
@@ -62,54 +59,40 @@ public class SysUser {
     public void setId (Long id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 
-    public void setName (String name) {
-        this.name = name;
+    public void setValue (String value) {
+        this.value = value;
     }
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword (String password) {
-        this.password = password;
-    }
-    public String getSalt() {
-        return salt;
+    public String getLabel() {
+        return label;
     }
 
-    public void setSalt (String salt) {
-        this.salt = salt;
+    public void setLabel (String label) {
+        this.label = label;
     }
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail (String email) {
-        this.email = email;
-    }
-    public String getMobile() {
-        return mobile;
+    public String getType() {
+        return type;
     }
 
-    public void setMobile (String mobile) {
-        this.mobile = mobile;
+    public void setType (String type) {
+        this.type = type;
     }
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus (Integer status) {
-        this.status = status;
-    }
-    public Long getDeptId() {
-        return deptId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDeptId (Long deptId) {
-        this.deptId = deptId;
+    public void setDescription (String description) {
+        this.description = description;
+    }
+    public Double getSort() {
+        return sort;
+    }
+
+    public void setSort (Double sort) {
+        this.sort = sort;
     }
     public String getCreateBy() {
         return createBy;
@@ -138,6 +121,13 @@ public class SysUser {
 
     public void setLastUpdateTime (java.util.Date lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
+    }
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks (String remarks) {
+        this.remarks = remarks;
     }
     public Integer getDelFlag() {
         return delFlag;

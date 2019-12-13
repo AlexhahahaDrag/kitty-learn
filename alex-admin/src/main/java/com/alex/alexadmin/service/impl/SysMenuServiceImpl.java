@@ -9,13 +9,13 @@ import com.alex.alexcore.page.MybatisPageHelper;
 import com.alex.alexcore.page.PageRequest;
 import com.alex.alexcore.page.PageResult;
 
-import com.alex.alexadmin.model.SysUser;
-import com.alex.alexadmin.dao.SysUserMapper;
-import com.alex.alexadmin.service.SysUserService;
+import com.alex.alexadmin.model.SysMenu;
+import com.alex.alexadmin.dao.SysMenuMapper;
+import com.alex.alexadmin.service.SysMenuService;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserServiceImpl)
+ * 菜单管理 (SysMenuServiceImpl)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:01:20
@@ -23,37 +23,37 @@ import com.alex.alexadmin.service.SysUserService;
  * version: 1.0.0
  */
  @Service
-public class SysUserServiceImpl implements SysUserService {
+public class SysMenuServiceImpl implements SysMenuService {
 
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private SysMenuMapper sysMenuMapper;
 
     @Override
-    public int save(SysUser record) {
+    public int save(SysMenu record) {
         if (record.getId() == null || record.getId() == 0)
-            return sysUserMapper.add(record);
-        return sysUserMapper.update(record);
+            return sysMenuMapper.add(record);
+        return sysMenuMapper.update(record);
     }
 
     @Override
-    public int delete(SysUser record) {
-        return sysUserMapper.delete(record.getId());
+    public int delete(SysMenu record) {
+        return sysMenuMapper.delete(record.getId());
     }
 
     @Override
-    public int delete(List<SysUser> records) {
-        for(SysUser sysUser : records)
-            delete(sysUser);
+    public int delete(List<SysMenu> records) {
+        for(SysMenu sysMenu : records)
+            delete(sysMenu);
         return 1;
     }
 
     @Override
-    public SysUser findById(Long id) {
-        return sysUserMapper.findById(id);
+    public SysMenu findById(Long id) {
+        return sysMenuMapper.findById(id);
     }
 
     @Override
     public PageResult findPage(PageRequest pageRequest) {
-        return MybatisPageHelper.findPage(pageRequest, sysUserMapper);
+        return MybatisPageHelper.findPage(pageRequest, sysMenuMapper);
     }
 }

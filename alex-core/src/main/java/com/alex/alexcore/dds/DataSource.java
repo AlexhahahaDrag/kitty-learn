@@ -1,4 +1,4 @@
-package com.alex.alexadmin.config.dds;
+package com.alex.alexcore.dds;
 
 import java.lang.annotation.*;
 

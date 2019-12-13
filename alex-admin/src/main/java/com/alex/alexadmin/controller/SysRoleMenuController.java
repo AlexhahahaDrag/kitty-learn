@@ -15,48 +15,48 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alex.alexcore.http.HttpResult;
 import com.alex.alexcore.page.PageRequest;
 
-import com.alex.alexadmin.model.SysUser;
-import com.alex.alexadmin.service.SysUserService;
+import com.alex.alexadmin.model.SysRoleMenu;
+import com.alex.alexadmin.service.SysRoleMenuService;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserController)
+ * 角色菜单 (SysRoleMenuController)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:01:20
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
- @Api(value ="SysUserController", tags={"用户管理"})
+ @Api(value ="SysRoleMenuController", tags={"角色菜单"})
  @RestController
- @RequestMapping("/sysUser")
-public class SysUserController {
+ @RequestMapping("/sysRoleMenu")
+public class SysRoleMenuController {
 
     @Autowired
-    private SysUserService sysUserService;
+    private SysRoleMenuService sysRoleMenuService;
 
     /**
-     * @description 保存/修改用户管理
+     * @description 保存/修改角色菜单
      * @param record
      * @return
     */
-    @ApiOperation(value = "保存用户管理")
+    @ApiOperation(value = "保存角色菜单")
     @PostMapping(value = "/save")
-    @RequiresPermissions("sys:sysUser:save")
-    public HttpResult save(@RequestBody SysUser record) {
-        return HttpResult.ok(sysUserService.save(record));
+    @RequiresPermissions("sys:sysRoleMenu:save")
+    public HttpResult save(@RequestBody SysRoleMenu record) {
+        return HttpResult.ok(sysRoleMenuService.save(record));
     }
 
     /**
-     * @description 删除用户管理
+     * @description 删除角色菜单
      * @param records
      * @return
     */
-    @ApiOperation(value = "删除用户管理")
+    @ApiOperation(value = "删除角色菜单")
     @PostMapping(value = "/delete")
-    @RequiresPermissions("sys:sysUser:delete")
-    public HttpResult delete(@RequestBody List<SysUser> records) {
-        return HttpResult.ok(sysUserService.delete(records));
+    @RequiresPermissions("sys:sysRoleMenu:delete")
+    public HttpResult delete(@RequestBody List<SysRoleMenu> records) {
+        return HttpResult.ok(sysRoleMenuService.delete(records));
     }
 
     /**
@@ -64,11 +64,11 @@ public class SysUserController {
      *@param id
      *@return
     */
-    @ApiOperation(value = "通过id查询用户管理")
+    @ApiOperation(value = "通过id查询角色菜单")
     @GetMapping(value = "/findById")
-    @RequiresPermissions("sys:sysUser:view")
+    @RequiresPermissions("sys:sysRoleMenu:view")
     public HttpResult findById(@RequestParam("id") Long id) {
-        return HttpResult.ok(sysUserService.findById(id));
+        return HttpResult.ok(sysRoleMenuService.findById(id));
     }
 
     /**
@@ -76,10 +76,10 @@ public class SysUserController {
      *@param pageRequest
      *@return
     */
-    @ApiOperation(value = "分页查询用户管理")
+    @ApiOperation(value = "分页查询角色菜单")
     @PostMapping(value = "/findPage")
-    @RequiresPermissions("sys:sysUser:view")
+    @RequiresPermissions("sys:sysRoleMenu:view")
     public HttpResult findPage(@RequestBody PageRequest pageRequest) {
-        return HttpResult.ok(sysUserService.findPage(pageRequest));
+        return HttpResult.ok(sysRoleMenuService.findPage(pageRequest));
     }
 }

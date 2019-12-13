@@ -2,50 +2,50 @@ package com.alex.alexadmin.dao;
 
 import java.util.List;
 
-import com.alex.alexadmin.model.SysUser;
+import com.alex.alexadmin.model.SysRoleDept;
 
 /**
  *-------------------------------
- * 用户管理 (SysUserMapper)
+ * 角色机构 (SysRoleDeptMapper)
  *------------------------
  * author: alex
  * createDate: 2019-12-13 16:01:20
  * description: 我是由代码生成器生成
  * version: 1.0.0
  */
-public interface SysUserMapper {
+public interface SysRoleDeptMapper {
 
     /**
-     * @description 添加用户管理
+     * @description 添加角色机构
      * @param record
      * @return
     */
-    int add(SysUser record);
+    int add(SysRoleDept record);
 
     /**
-     * @description 删除用户管理
+     * @description 删除角色机构
      * @param id
      * @return
     */
     int delete(Long id);
 
     /**
-     * @description 修改用户管理
+     * @description 修改角色机构
      * @param record
      * @return
     */
-    int update(SysUser record);
+    int update(SysRoleDept record);
 
     /**
      *@description 根据主键查询
      *@param id
      *@return
     */
-    SysUser findById(Long id);
+    SysRoleDept findById(Long id);
 
     /**
      *@description 基础分页查询
      *@return
     */
-    List<SysUser> findPage();
+    List<SysRoleDept> findPage();
 }
