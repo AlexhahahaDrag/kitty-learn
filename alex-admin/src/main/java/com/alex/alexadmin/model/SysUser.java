@@ -3,6 +3,9 @@ package com.alex.alexadmin.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.io.Serializable;
+
 /**
  *-------------------------------
  * 用户管理 (SysUser)
@@ -13,7 +16,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * version: 1.0.0
  */
 @ApiModel(value="SysUser对象", description="用户管理")
-public class SysUser {
+public class SysUser implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    public SysUser(String name, String password) {
+        super();
+        this.name = name;
+        this.password = password;
+    }
+
+    public SysUser() {
+    }
 
     @ApiModelProperty(value = "编号")
     private Long id;
@@ -145,5 +159,10 @@ public class SysUser {
 
     public void setDelFlag (Integer delFlag) {
         this.delFlag = delFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "{ name = " + getName() + ", password = " + getPassword() + "}";
     }
 }

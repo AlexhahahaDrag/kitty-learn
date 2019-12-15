@@ -10,6 +10,17 @@ server:
 spring:
   profiles:
     active: dev
+  redis:
+    database: 0      #redis数据库索引
+    host: localhost  #redis服务器地址
+    port: 6379       #redis服务器连接端口
+    password:        #redis服务器连接密码
+    lettuce:
+      pool:
+        max-active: 8 #连接池最大连接数8
+        max-wait: -1  #连接池最大阻塞等待时间（使用负数表示没有限制）
+        max-idle: 8   #连接池中的最大的空闲连接数
+        min-idle: 0   #连接池中的最小空闲连接
 
 logging:
   level:
